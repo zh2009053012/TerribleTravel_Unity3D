@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class GameStateStart : IStateBase {
 
@@ -21,13 +22,14 @@ public class GameStateStart : IStateBase {
 	}
 	//
 	GameStart m_owner;
+	GameObject go;
 	public void Enter(GameStateBase owner)
 	{
 		m_owner = (GameStart)owner;
 		EventConfig.Config();
-		GameObject prefab = Resources.Load("Canvas")as GameObject;
-		GameObject go = GameObject.Instantiate(prefab);
-
+		CursorManager.SetCursor (CursorManager.CursorState.DEFAULT);
+		GameObject prefab = Resources.Load ("StartCanvas")as GameObject;
+		go = GameObject.Instantiate (prefab);
 	}
 
 	public void Execute(GameStateBase owner)
@@ -37,11 +39,16 @@ public class GameStateStart : IStateBase {
 
 	public void Exit(GameStateBase owner)
 	{
-
+		if (null != go) {
+			GameObject.Destroy (go);
+			go = null;
+		}
 	}
 
 	public void Message(string message, object[] parameters)
 	{
-
+		if (message.Equals ("Play")) {
+			SceneManager.LoadScene ("Scene1");
+		}
 	}
 }

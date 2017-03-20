@@ -3,7 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 public class EventController : MonoBehaviour {
 	[SerializeField]
-	protected int m_id;//event id
+	protected int m_id=1;//event id
+	[SerializeField]
+	protected CursorManager.CursorState m_cursor;
 	protected bool m_isTrigger=false;
 	public bool IsTrigger{
 		get{return m_isTrigger;}
@@ -63,7 +65,8 @@ public class EventController : MonoBehaviour {
 	public void OnCursorEnter(){
 		if(IsOpen){
 			m_isTrigger = true;
-			CursorManager.SetCursor(CursorManager.CursorState.SELECT);
+			Debug.Log ("enter");
+			CursorManager.SetCursor(m_cursor);
 		}
 	}
 	public void OnCursorExit(){
@@ -73,9 +76,7 @@ public class EventController : MonoBehaviour {
 		}
 	}
 	public void OnCursorSelect(){
-		Debug.Log("on select");
 		if(m_isTrigger){
-			Debug.Log("select");
 			Play();
 		}
 	}
