@@ -7,6 +7,7 @@ public class MessageUI : MonoBehaviour {
 
 	public Text m_messageText;
 	public Image m_bg;
+	public Image m_maskImage;
 	private float m_showTime;
 	private bool m_isHitClose = true;
 	private MessageCallbackEvent m_callback;
@@ -17,8 +18,9 @@ public class MessageUI : MonoBehaviour {
 		m_callback = null;
 		this.gameObject.SetActive(false);
 	}
-	public void ShowMessage(string message, MessageCallbackEvent e, float showTime=3)
+	public void ShowMessage(string message, bool hasMask, MessageCallbackEvent e, float showTime=3)
 	{
+		m_maskImage.gameObject.SetActive (hasMask);
 		m_callback = e;
 		m_isHitClose = true;
 		m_messageText.color = Color.white;
@@ -26,8 +28,9 @@ public class MessageUI : MonoBehaviour {
 		this.gameObject.SetActive(true);
 		StartCoroutine(Hide(showTime));
 	}
-	public void ShowMessage(string message, float showTime=3)
+	public void ShowMessage(string message, bool hasMask, float showTime=3)
 	{
+		m_maskImage.gameObject.SetActive (hasMask);
 		m_callback = null;
 		m_isHitClose = true;
 		m_messageText.color = Color.white;
@@ -37,6 +40,7 @@ public class MessageUI : MonoBehaviour {
 	}
 	public void ShowMessage(string message, Color color, float showTime, bool isHitClose, MessageCallbackEvent e)
 	{
+		m_maskImage.gameObject.SetActive (true);
 		m_callback = e;
 		m_isHitClose = isHitClose;
 		m_messageText.color = color;
@@ -47,6 +51,7 @@ public class MessageUI : MonoBehaviour {
 
 	private void SetMessage(string message)
 	{
+		m_maskImage.gameObject.SetActive (true);
 		m_messageText.text = message;
 		float width = m_messageText.preferredWidth;
 		m_messageText.rectTransform.sizeDelta = new Vector2(width, m_messageText.rectTransform.sizeDelta.y);

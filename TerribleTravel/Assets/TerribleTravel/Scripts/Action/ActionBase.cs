@@ -16,8 +16,15 @@ public class ActionBase : MonoBehaviour, IAction {
 	public void AddActionOverNotify(System.Action<int> notify){
 		m_notifyEvent += notify;
 	}
+	protected void NotifyActionOverEvent(){
+		m_isActionOver = true;
+		if (null != m_notifyEvent) {
+			m_notifyEvent.Invoke (ID);
+		}
+	}
+	protected bool m_isPlaying = false;
 
-	public void Play(){
-		
+	public virtual void Play(){
+		Debug.Log ("virtual play");
 	}
 }

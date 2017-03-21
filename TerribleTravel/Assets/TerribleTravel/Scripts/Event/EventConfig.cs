@@ -19,6 +19,7 @@ public class EventData{
 public class EventConfig {
 
 	private static List<EventData> m_dataList = new List<EventData>();
+	private static bool m_isConfig = false;
 	private static bool AddData(EventData data){
 		if(null == GetEventData(data.m_id)){
 			m_dataList.Add(data);
@@ -30,6 +31,8 @@ public class EventConfig {
 	}
 
 	public static EventData GetEventDataCopy(int id){
+		if(!m_isConfig)
+			Config();
 		for(int i=0; i<m_dataList.Count; i++){
 			if(m_dataList[i].m_id == id){
 				return m_dataList[i].Copy();
@@ -47,7 +50,7 @@ public class EventConfig {
 	}
 
 	public static void Config(){
-		Debug.Log("EventConfig:");
+		m_isConfig = true;
 		EventData e1 = new EventData(1, new int[]{});
 		AddData(e1);
 		EventData e2 = new EventData(2, new int[]{1});

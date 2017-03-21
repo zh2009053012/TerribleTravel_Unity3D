@@ -1,11 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.EventSystems;
+[RequireComponent(typeof(EventTrigger))]
 public class EventController : MonoBehaviour {
 	[SerializeField]
 	protected int m_id=1;//event id
 	[SerializeField]
 	protected CursorManager.CursorState m_cursor;
+	[SerializeField]
+	protected string m_triggerMsg;
+	[SerializeField]
+	protected string m_hint;
 	protected bool m_isTrigger=false;
 	public bool IsTrigger{
 		get{return m_isTrigger;}
@@ -14,7 +20,7 @@ public class EventController : MonoBehaviour {
 		get{
 			
 			EventData ed = EventConfig.GetEventDataCopy(m_id);
-			Debug.Log("Check IsOpen:"+m_id+ed.m_openRequiredList.Count);
+			//Debug.Log("Check IsOpen:"+m_id+ed.m_openRequiredList.Count);
 			foreach(int requiredID in ed.m_openRequiredList){
 				if(!EventManager.IsEventClose(requiredID)){
 					Debug.Log("not open");
@@ -49,10 +55,11 @@ public class EventController : MonoBehaviour {
 	}
 	public void Play(){
 		if(m_actionList.Count <= 0){
-			Debug.Log("set close"+m_id);
+			//Debug.Log("set close"+m_id);
 			IsClose = true;
 			return;
 		}
+		Debug.Log ("action list:"+m_actionList.Count);
 		foreach(ActionBase ab in m_actionList){
 			ab.AddActionOverNotify(OnActionOver);
 			ab.Play();
@@ -65,8 +72,11 @@ public class EventController : MonoBehaviour {
 	public void OnCursorEnter(){
 		if(IsOpen){
 			m_isTrigger = true;
-			Debug.Log ("enter");
+		//	Debug.Log ("enter");
 			CursorManager.SetCursor(m_cursor);
+			if (string.IsNullOrEmpty (m_hint)) {
+				
+			}
 		}
 	}
 	public void OnCursorExit(){
