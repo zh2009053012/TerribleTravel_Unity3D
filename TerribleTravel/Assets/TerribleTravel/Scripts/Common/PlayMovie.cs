@@ -38,14 +38,19 @@ public class PlayMovie : MonoBehaviour {
 			movTexture.Play ();
 			isPlayed = true;
 			startTime = Time.time;
+			StartCoroutine (StopMovie(movTexture.duration));
 		}
 		if (Input.GetKeyDown (KeyCode.Escape) || Input.GetMouseButtonDown(0)) {
 			StopPlayMovie ();
 		}
 		if (isPlayed && Time.time-startTime-movTexture.duration>=0) {
-			StopPlayMovie ();
+			//StopPlayMovie ();
 		}
 
+	}
+	IEnumerator StopMovie(float second){
+		yield return new WaitForSeconds (second);
+		StopPlayMovie ();
 	}
 	void StopPlayMovie()
 	{
