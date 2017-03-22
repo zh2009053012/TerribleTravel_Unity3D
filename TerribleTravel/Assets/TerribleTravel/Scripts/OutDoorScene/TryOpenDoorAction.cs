@@ -17,7 +17,7 @@ public class TryOpenDoorAction : ActionBase {
 	void Update () {
 	
 	}
-	public override void Play(){
+	public override void Play(int eventID){
 		Debug.Log ("play:"+gameObject.name+","+m_isPlaying);
 		if (m_isPlaying) {
 			return;
@@ -46,6 +46,6 @@ public class TryOpenDoorAction : ActionBase {
 			m_next.SetActive (true);
 			gameObject.SetActive (false);
 		}
-
+		NotifyActionOverEvent();
 	}
 }

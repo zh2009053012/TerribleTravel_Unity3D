@@ -46,15 +46,19 @@ public class GameStateIcebox : IStateBase {
 	public void Message(string message, object[] parameters)
 	{
 		if (message.Equals ("Up")) {
-			GameStateManager.Instance ().FSM.ChangeState (GameStateNull.Instance ());
+			uiCtr.ShowIceboxUp ();
 		} else if (message.Equals ("Down")) {
-			GameStateManager.Instance ().FSM.ChangeState (GameStateKitchen.Instance ());
+			uiCtr.ShowIceboxDown ();
 		} else if (message.Equals ("Out")) {
 			GameStateManager.Instance ().FSM.ChangeState (GameStateKitchen.Instance ());
 		} else if (message.Equals ("ShowBrainAniOver")) {
-			
+			Debug.Log ("show brain ani over");
+			GameData.HasBrain = true;
+			CursorManager.SetCursor (CursorManager.CursorState.DEFAULT);
+			GameStateManager.Instance ().FSM.GlobalState.Message ("GetBrain", null);
 		} else if (message.Equals ("ShowBrain")) {
 			if (!GameData.HasBrain) {
+				CursorManager.SetCursor (CursorManager.CursorState.DEFAULT);
 				uiCtr.ShowBrainAnimation ();
 				GameData.HasBrain = true;
 			}

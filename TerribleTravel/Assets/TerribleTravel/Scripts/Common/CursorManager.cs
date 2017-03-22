@@ -20,19 +20,19 @@ public class CursorManager {
 	private static Texture2D m_openCursor;
 	public static Texture2D OpenCursor{
 		get{
-			if(m_selCursor == null){
-				m_selCursor = Resources.Load<Texture2D>("Cursor/OpenCursor");
+			if(m_openCursor == null){
+				m_openCursor = Resources.Load<Texture2D>("Cursor/OpenCursor");
 			}
-			return m_selCursor;
+			return m_openCursor;
 		}
 	}
 	private static Texture2D m_backCursor;
 	public static Texture2D BackCursor{
 		get{
-			if(m_selCursor == null){
-				m_selCursor = Resources.Load<Texture2D>("Cursor/BackCursor");
+			if(m_backCursor == null){
+				m_backCursor = Resources.Load<Texture2D>("Cursor/BackCursor");
 			}
-			return m_selCursor;
+			return m_backCursor;
 		}
 	}
 	private static Texture2D m_defaultCursor;
@@ -49,19 +49,19 @@ public class CursorManager {
 		Vector2 center = Vector2.zero;
 		switch(cs){
 		case CursorState.DEFAULT:
-			center = new Vector2(DefaultCursor.width, DefaultCursor.height)*0.5f;
+			//center = new Vector2(DefaultCursor.width, DefaultCursor.height)*0.5f;
 			Cursor.SetCursor(DefaultCursor, center, CursorMode.ForceSoftware);
 			break;
 		case CursorState.SELECT:
-			center = new Vector2(SelCursor.width, SelCursor.height)*0.5f;
+			//center = new Vector2(SelCursor.width, SelCursor.height)*0.5f;
 			Cursor.SetCursor(SelCursor, center, CursorMode.ForceSoftware);
 			break;
 		case CursorState.BACK:
-			center = new Vector2(BackCursor.width, BackCursor.height)*0.5f;
+			//center = new Vector2(BackCursor.width, BackCursor.height)*0.5f;
 			Cursor.SetCursor(BackCursor, center, CursorMode.ForceSoftware);
 			break;
 		case CursorState.OPEN:
-			center = new Vector2(OpenCursor.width, OpenCursor.height)*0.5f;
+			//center = new Vector2(OpenCursor.width, OpenCursor.height)*0.5f;
 			Cursor.SetCursor(OpenCursor, center, CursorMode.ForceSoftware);
 			break;
 		}

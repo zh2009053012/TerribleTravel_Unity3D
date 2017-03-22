@@ -12,6 +12,15 @@ public class MessageUI : MonoBehaviour {
 	private bool m_isHitClose = true;
 	private MessageCallbackEvent m_callback;
 
+	private static GameObject prefab;
+	public static void AutoShowMessage(string msg, bool hasMask, MessageCallbackEvent e, float showTime){
+		if(null == prefab)
+			prefab = Resources.Load ("MessageCanvas")as GameObject;
+		GameObject go = GameObject.Instantiate (prefab);
+		MessageUI uiCtr = go.GetComponent<MessageUI> ();
+		uiCtr.ShowMessage (msg, hasMask, e, showTime);
+	}
+
 	public void Init()
 	{
 		m_messageText.text = "";
@@ -23,20 +32,25 @@ public class MessageUI : MonoBehaviour {
 		m_maskImage.gameObject.SetActive (hasMask);
 		m_callback = e;
 		m_isHitClose = true;
-		m_messageText.color = Color.white;
+		//m_messageText.color = Color.white;
 		SetMessage(message);
 		this.gameObject.SetActive(true);
-		StartCoroutine(Hide(showTime));
+
+		//StartCoroutine(Hide(showTime));
+		AutoDestroy adCtr = this.gameObject.AddComponent<AutoDestroy> ();
+		adCtr.AutoDestroyAfterSeconds (showTime);
 	}
 	public void ShowMessage(string message, bool hasMask, float showTime=3)
 	{
 		m_maskImage.gameObject.SetActive (hasMask);
 		m_callback = null;
 		m_isHitClose = true;
-		m_messageText.color = Color.white;
+		//m_messageText.color = Color.white;
 		SetMessage(message);
 		this.gameObject.SetActive(true);
-		StartCoroutine(Hide(showTime));
+		//StartCoroutine(Hide(showTime));
+		AutoDestroy adCtr = this.gameObject.AddComponent<AutoDestroy> ();
+		adCtr.AutoDestroyAfterSeconds (showTime);
 	}
 	public void ShowMessage(string message, Color color, float showTime, bool isHitClose, MessageCallbackEvent e)
 	{
@@ -46,12 +60,14 @@ public class MessageUI : MonoBehaviour {
 		m_messageText.color = color;
 		SetMessage(message);
 		this.gameObject.SetActive(true);
-		StartCoroutine(Hide(showTime));
+		//StartCoroutine(Hide(showTime));
+		AutoDestroy adCtr = this.gameObject.AddComponent<AutoDestroy> ();
+		adCtr.AutoDestroyAfterSeconds (showTime);
 	}
 
 	private void SetMessage(string message)
 	{
-		m_maskImage.gameObject.SetActive (true);
+		//m_maskImage.gameObject.SetActive (true);
 		m_messageText.text = message;
 		float width = m_messageText.preferredWidth;
 		m_messageText.rectTransform.sizeDelta = new Vector2(width, m_messageText.rectTransform.sizeDelta.y);

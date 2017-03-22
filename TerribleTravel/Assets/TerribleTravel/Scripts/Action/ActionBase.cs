@@ -24,7 +24,7 @@ public class ActionBase : MonoBehaviour, IAction {
 	}
 	protected bool m_isPlaying = false;
 
-	public virtual void Play(){
+	public virtual void Play(int eventID){
 		Debug.Log ("virtual play");
 	}
 }

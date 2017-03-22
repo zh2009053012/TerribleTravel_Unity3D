@@ -7,11 +7,19 @@ public class EventController : MonoBehaviour {
 	[SerializeField]
 	protected int m_id=1;//event id
 	[SerializeField]
+	protected bool m_repeat=true;
+	[SerializeField]
 	protected CursorManager.CursorState m_cursor;
 	[SerializeField]
 	protected string m_triggerMsg;
 	[SerializeField]
 	protected string m_hint;
+	[SerializeField]
+	protected GameObject m_openShowGO;
+	[SerializeField]
+	protected GameObject m_closeShowGO;
+	[SerializeField]
+	protected GameObject m_closeHideGO;
 	protected bool m_isTrigger=false;
 	public bool IsTrigger{
 		get{return m_isTrigger;}
@@ -30,19 +38,31 @@ public class EventController : MonoBehaviour {
 			return true;
 		}
 	}
-	protected bool m_isClose = false;
+	//protected bool m_isClose = false;
 	public bool IsClose{
-		get{return m_isClose;}
+		get{return EventManager.IsEventClose(m_id);}
 		set{
-			m_isClose = value;
-			EventManager.SetEventClose(m_id, m_isClose);
+			//m_isClose = value;
+			EventManager.SetEventClose(m_id, value);
 		}
 	}
 	[SerializeField]
 	protected List<ActionBase> m_actionList = new List<ActionBase>();
 
 	void Start(){
-
+		if (IsClose) {
+			if (null != m_closeShowGO) {
+				m_closeShowGO.SetActive (true);
+			}
+			if (null != m_closeHideGO) {
+				m_closeHideGO.SetActive (false);
+			}
+		}
+		else if (IsOpen) {
+			if (null != m_openShowGO) {
+				m_openShowGO.SetActive (true);
+			}
+		}
 	}
 
 	void OnActionOver(int id){
@@ -62,7 +82,7 @@ public class EventController : MonoBehaviour {
 		Debug.Log ("action list:"+m_actionList.Count);
 		foreach(ActionBase ab in m_actionList){
 			ab.AddActionOverNotify(OnActionOver);
-			ab.Play();
+			ab.Play(m_id);
 		}
 	}
 
@@ -71,22 +91,29 @@ public class EventController : MonoBehaviour {
 	}
 	public void OnCursorEnter(){
 		if(IsOpen){
+			if (!m_repeat && IsClose) {
+				return;
+			}
 			m_isTrigger = true;
-		//	Debug.Log ("enter");
 			CursorManager.SetCursor(m_cursor);
-			if (string.IsNullOrEmpty (m_hint)) {
-				
+			if (!string.IsNullOrEmpty (m_hint)) {
+				MessageUI.AutoShowMessage (m_hint, false, null, 1);
 			}
 		}
 	}
 	public void OnCursorExit(){
+		//Debug.Log ("exit");
 		if(m_isTrigger)
 		{
+			m_isTrigger = false;
 			CursorManager.SetCursor(CursorManager.CursorState.DEFAULT);
 		}
 	}
 	public void OnCursorSelect(){
 		if(m_isTrigger){
+			if (!string.IsNullOrEmpty (m_triggerMsg)) {
+				MessageUI.AutoShowMessage (m_triggerMsg, true, null, 2);
+			}
 			Play();
 		}
 	}

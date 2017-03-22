@@ -379,6 +379,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_id: 1
   m_cursor: 2
+  m_triggerMsg: 
+  m_hint: "\u5730\u4E0B\u8F66\u5E93"
+  m_openShowGO: {fileID: 0}
+  m_closeShowGO: {fileID: 0}
   m_actionList: []
 --- !u!114 &11414092
 MonoBehaviour:
@@ -420,6 +424,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_id: 1
   m_cursor: 2
+  m_triggerMsg: 
+  m_hint: "\u8863\u5E3D\u95F4"
+  m_openShowGO: {fileID: 0}
+  m_closeShowGO: {fileID: 0}
   m_actionList: []
 --- !u!114 &11419558
 MonoBehaviour:
@@ -434,6 +442,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_id: 1
   m_cursor: 2
+  m_triggerMsg: 
+  m_hint: "\u4E8C\u697C\u9633\u53F0"
+  m_openShowGO: {fileID: 0}
+  m_closeShowGO: {fileID: 0}
   m_actionList: []
 --- !u!114 &11421808
 MonoBehaviour:
@@ -475,6 +487,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_id: 1
   m_cursor: 2
+  m_triggerMsg: 
+  m_hint: "\u9910\u5385"
+  m_openShowGO: {fileID: 0}
+  m_closeShowGO: {fileID: 0}
   m_actionList: []
 --- !u!114 &11451576
 MonoBehaviour:
@@ -489,6 +505,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_id: 1
   m_cursor: 2
+  m_triggerMsg: 
+  m_hint: "\u53A8\u623F"
+  m_openShowGO: {fileID: 0}
+  m_closeShowGO: {fileID: 0}
   m_actionList: []
 --- !u!114 &11453394
 MonoBehaviour:

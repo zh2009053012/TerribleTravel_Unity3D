@@ -3,5 +3,5 @@ using System.Collections;
 
 public interface IAction {
 
-	void Play();
+	void Play(int eventID);
 }

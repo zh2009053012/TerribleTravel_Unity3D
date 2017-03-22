@@ -10,8 +10,8 @@ public class GameStart : GameStateBase {
 
 		//FSM.ChangeState (GameStateOutDoor.Instance ());
 		FSM.ChangeState (GameStateHall.Instance ());
-		//		FSM.GlobalState = GameGlobalState.Instance ();
-		//		FSM.GlobalState.Enter (FSM.Owner);
+		FSM.GlobalState = GameStateMainUI.Instance ();
+		FSM.GlobalState.Enter (FSM.Owner);
 		CursorManager.SetCursor(CursorManager.CursorState.DEFAULT);
 	}
 	

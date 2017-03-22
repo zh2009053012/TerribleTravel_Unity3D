@@ -46,7 +46,7 @@ public class GameStateKitchen : IStateBase {
 		if (message.Equals ("Icebox")) {
 			GameStateManager.Instance ().FSM.ChangeState (GameStateIcebox.Instance ());
 		} else if (message.Equals ("Clean")) {
-			GameStateManager.Instance ().FSM.ChangeState (GameStateNull.Instance ());
+			GameStateManager.Instance ().FSM.ChangeState (GameStateClean.Instance ());
 		} else if (message.Equals ("Out")) {
 			GameStateManager.Instance ().FSM.ChangeState (GameStateHall.Instance ());
 		}

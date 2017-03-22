@@ -44,11 +44,11 @@ public class GameStateHall : IStateBase {
 	public void Message(string message, object[] parameters)
 	{
 		if (message.Equals ("ClothingRoom")) {
-			GameStateManager.Instance ().FSM.ChangeState (GameStateNull.Instance ());
+			GameStateManager.Instance ().FSM.ChangeState (GameStateClothing.Instance ());
 		} else if (message.Equals ("Kitchen")) {
 			GameStateManager.Instance ().FSM.ChangeState (GameStateKitchen.Instance ());
 		} else if (message.Equals ("DiningRoom")) {
-			GameStateManager.Instance ().FSM.ChangeState (GameStateNull.Instance ());
+			GameStateManager.Instance ().FSM.ChangeState (GameStateDining.Instance ());
 		} else if (message.Equals ("UndergroundGarage")) {
 			GameStateManager.Instance ().FSM.ChangeState (GameStateNull.Instance ());
 		} else if (message.Equals ("SecondFloor")) {

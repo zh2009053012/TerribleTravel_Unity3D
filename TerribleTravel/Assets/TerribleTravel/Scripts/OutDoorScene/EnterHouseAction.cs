@@ -8,7 +8,7 @@ public class EnterHouseAction : ActionBase {
 	
 	}
 	
-	public override void Play(){
+	public override void Play(int eventID){
 		if (m_isPlaying) {
 			return;
 		} else {

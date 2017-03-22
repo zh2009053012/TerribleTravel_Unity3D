@@ -27,7 +27,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 224: {fileID: 22447050}
-  - 114: {fileID: 11498918}
   m_Layer: 5
   m_Name: Hits
   m_TagString: Untagged
@@ -121,7 +120,7 @@ GameObject:
   - 81: {fileID: 8174028}
   m_Layer: 0
   m_Name: Camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -139,7 +138,7 @@ GameObject:
   - 114: {fileID: 11498990}
   - 82: {fileID: 8237010}
   m_Layer: 5
-  m_Name: SecondFloorCanvas
+  m_Name: ClothingCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -278,9 +277,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 84534cc519bdd954d8d6229932137ca8, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 61839fd8e0c489749af4819b722b7b2a, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.3
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -393,7 +392,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 11498918}
+        - m_Target: {fileID: 0}
           m_MethodName: OnStudyClick
           m_Mode: 1
           m_Arguments:
@@ -505,7 +504,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 11498918}
+        - m_Target: {fileID: 0}
           m_MethodName: OnBalconyClick
           m_Mode: 1
           m_Arguments:
@@ -592,7 +591,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_id: 1
+  m_repeat: 1
   m_cursor: 2
+  m_triggerMsg: 
+  m_hint: 
+  m_openShowGO: {fileID: 0}
+  m_closeShowGO: {fileID: 0}
   m_actionList: []
 --- !u!114 &11442232
 MonoBehaviour:
@@ -637,7 +641,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 11498918}
+        - m_Target: {fileID: 0}
           m_MethodName: OnMainBedRoomClick
           m_Mode: 1
           m_Arguments:
@@ -751,7 +755,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_id: 1
+  m_repeat: 1
   m_cursor: 2
+  m_triggerMsg: 
+  m_hint: 
+  m_openShowGO: {fileID: 0}
+  m_closeShowGO: {fileID: 0}
   m_actionList: []
 --- !u!114 &11458478
 MonoBehaviour:
@@ -765,7 +774,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_id: 1
+  m_repeat: 1
   m_cursor: 2
+  m_triggerMsg: 
+  m_hint: 
+  m_openShowGO: {fileID: 0}
+  m_closeShowGO: {fileID: 0}
   m_actionList: []
 --- !u!114 &11458820
 MonoBehaviour:
@@ -779,7 +793,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_id: 1
+  m_repeat: 1
   m_cursor: 2
+  m_triggerMsg: 
+  m_hint: 
+  m_openShowGO: {fileID: 0}
+  m_closeShowGO: {fileID: 0}
   m_actionList: []
 --- !u!114 &11465890
 MonoBehaviour:
@@ -793,7 +812,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_id: 1
+  m_repeat: 1
   m_cursor: 2
+  m_triggerMsg: 
+  m_hint: 
+  m_openShowGO: {fileID: 0}
+  m_closeShowGO: {fileID: 0}
   m_actionList: []
 --- !u!114 &11469068
 MonoBehaviour:
@@ -807,7 +831,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_id: 1
+  m_repeat: 1
   m_cursor: 2
+  m_triggerMsg: 
+  m_hint: 
+  m_openShowGO: {fileID: 0}
+  m_closeShowGO: {fileID: 0}
   m_actionList: []
 --- !u!114 &11481014
 MonoBehaviour:
@@ -825,7 +854,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 11498918}
+        - m_Target: {fileID: 0}
           m_MethodName: OnDaughterRoomClick
           m_Mode: 1
           m_Arguments:
@@ -916,7 +945,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 11498918}
+        - m_Target: {fileID: 0}
           m_MethodName: OnOutClick
           m_Mode: 1
           m_Arguments:
@@ -980,7 +1009,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 11498918}
+        - m_Target: {fileID: 0}
           m_MethodName: OnBathRoomClick
           m_Mode: 1
           m_Arguments:
@@ -1028,17 +1057,6 @@ MonoBehaviour:
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
---- !u!114 &11498918
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 131602}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb1675ca29d059241a15edd3e974eb2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11498990
 MonoBehaviour:
   m_ObjectHideFlags: 1

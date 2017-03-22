@@ -48,13 +48,14 @@ GameObject:
   - 114: {fileID: 11444740}
   - 95: {fileID: 9594620}
   - 114: {fileID: 11484552}
+  - 114: {fileID: 11468490}
   m_Layer: 5
   m_Name: OpenUpImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &121018
 GameObject:
   m_ObjectHideFlags: 1
@@ -211,7 +212,7 @@ GameObject:
   - 81: {fileID: 8180538}
   m_Layer: 0
   m_Name: Camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -296,7 +297,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ec9f8ed92bc1f8a4da13bc6cfe3c7f36, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.3
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -460,6 +461,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_id: 1
   m_cursor: 2
+  m_triggerMsg: 
+  m_hint: 
   m_actionList: []
 --- !u!114 &11412434
 MonoBehaviour:
@@ -501,7 +504,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_id: 1
   m_cursor: 1
-  m_actionList: []
+  m_triggerMsg: "\u83B7\u5F97\u6728\u8D28\u8111\u888B"
+  m_hint: 
+  m_actionList:
+  - {fileID: 11468490}
 --- !u!114 &11438910
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -515,6 +521,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_id: 1
   m_cursor: 2
+  m_triggerMsg: 
+  m_hint: 
   m_actionList: []
 --- !u!114 &11442966
 MonoBehaviour:
@@ -583,7 +591,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -624,10 +632,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a604ea588fc1a934397977a9f14556ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_upHit: {fileID: 149414}
+  m_downHit: {fileID: 160512}
   m_openUpImage: {fileID: 115010}
   m_brainImage: {fileID: 161742}
   m_openDownImage: {fileID: 107622}
   m_ani: {fileID: 9594620}
+  m_ghostAudio: {fileID: 8300000, guid: 623ee20563ee96c46bf00e891143d0c7, type: 3}
+--- !u!114 &11468490
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 115010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ef867400c112e84a90c6c788eca498b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiCtr: {fileID: 11462664}
+  m_anim: {fileID: 9594620}
+  m_bigBrainImage: {fileID: 121018}
 --- !u!114 &11469276
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -765,12 +790,12 @@ MonoBehaviour:
   m_event:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 167922}
-        m_MethodName: 
+      - m_Target: {fileID: 11468490}
+        m_MethodName: ShowBrainAniOver
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -791,6 +816,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_id: 1
   m_cursor: 2
+  m_triggerMsg: 
+  m_hint: "\u9000\u56DE\u53A8\u623F"
   m_actionList: []
 --- !u!114 &11488450
 MonoBehaviour:
@@ -906,12 +933,12 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 161742}
-          m_MethodName: 
+        - m_Target: {fileID: 11433374}
+          m_MethodName: OnCursorSelect
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: 
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 

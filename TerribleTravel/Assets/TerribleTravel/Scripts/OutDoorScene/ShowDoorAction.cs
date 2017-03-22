@@ -17,7 +17,7 @@ public class ShowDoorAction : ActionBase {
 	void Update () {
 	
 	}
-	public override void Play(){
+	public override void Play(int eventID){
 		if (m_isPlaying) {
 			return;
 		} else {
