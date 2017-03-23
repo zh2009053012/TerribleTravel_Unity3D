@@ -90,7 +90,9 @@ public class EventController : MonoBehaviour {
 		
 	}
 	public void OnCursorEnter(){
+		Debug.Log (IsOpen);
 		if(IsOpen){
+			Debug.Log ("enter");
 			if (!m_repeat && IsClose) {
 				return;
 			}
