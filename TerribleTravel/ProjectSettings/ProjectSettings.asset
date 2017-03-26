@@ -37,7 +37,11 @@ PlayerSettings:
   useOSAutorotation: 1
   use32BitDisplayBuffer: 1
   disableDepthAndStencilBuffers: 0
+<<<<<<< HEAD
   defaultIsFullScreen: 0
+=======
+  defaultIsFullScreen: 1
+>>>>>>> 22c30b62de18efd2e3459c0e8953c606d13d33fc
   defaultIsNativeResolution: 0
   runInBackground: 0
   captureSingleScreen: 0
@@ -442,6 +446,8 @@ PlayerSettings:
   - WebGL::exceptionSupport
   - WebGL::memorySize
   - WebPlayer::ScriptingBackend
+  - iOS::Architecture
+  - iOS::ScriptingBackend
   Android::ScriptingBackend: 0
   Standalone::ScriptingBackend: 0
   WebGL::ScriptingBackend: 1
@@ -449,6 +455,8 @@ PlayerSettings:
   WebGL::exceptionSupport: 1
   WebGL::memorySize: 256
   WebPlayer::ScriptingBackend: 0
+  iOS::Architecture: 2
+  iOS::ScriptingBackend: 1
   boolPropertyNames:
   - WebGL::analyzeBuildSize
   - WebGL::dataCaching

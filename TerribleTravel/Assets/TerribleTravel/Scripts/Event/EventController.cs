@@ -98,7 +98,9 @@ public class EventController : MonoBehaviour {
 	//
 	MessageUI m_msgCtr;
 	public void OnCursorEnter(){
+		Debug.Log (IsOpen);
 		if(IsOpen){
+			Debug.Log ("enter");
 			if (!m_repeat && IsClose) {
 				return;
 			}

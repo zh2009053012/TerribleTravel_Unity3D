@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <RootNamespace></RootNamespace>
+    <ProjectGuid>{C9C39D07-2567-B865-C031-994024AC5AA7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <BaseDirectory>Assets</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_3_6;UNITY_5_3;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_SPRITE_POLYGON;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_LOCALIZATION;ENABLE_ANDROID_ATLAS_ETC1_COMPRESSION;ENABLE_EDITOR_TESTS_RUNNER;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_TEXTUREID_MAP;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_LOG_MIXED_STACKTRACE;ENABLE_UNITYWEBREQUEST;ENABLE_EVENT_QUEUE;ENABLE_CLUSTERINPUT;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE;CROSS_PLATFORM_INPUT</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Temp\bin\Release\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="UnityEngine">
+      <HintPath>D:/Program Files (x86)/unity5.3.6/Editor/Data/Managed/UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>D:/Program Files (x86)/unity5.3.6/Editor/Data/Managed/UnityEditor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\Lens Wetness\Core\GrabTexture.cs" />
+     <Compile Include="Assets\Lens Wetness\Defocus\Defocus.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\Action\ActionBase.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\Action\IAction.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\Balcony\BalconyUI.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\Balcony\LungAction.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\Balcony\PainterAction.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\BathRoom\BathRoomMirrorAction.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\BathRoom\BathRoomUI.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\BathRoom\BathRoomWaterAction.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\BathRoom\FingerAction.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\BathRoom\WindowAction.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\ClothingRoom\ClothingUI.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\Common\AnimationMessage.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\Common\AudioAction.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\Common\AudioManager.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\Common\AutoDestroy.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\Common\CursorManager.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\Common\GameData.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\Common\MessageUI.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\Common\PlayMovie.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\Common\ShowHideAction.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\DaughterRoom\BedGhostAction.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\DaughterRoom\DaughterRoomUI.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\DaughterRoom\DropLightAction.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\DaughterRoom\DropLightUpAction.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\DaughterRoom\HeartAction.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\DaughterRoom\ShowDresserAction.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\DiningRoom\DiningTableUI.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\DiningRoom\DiningUI.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\Event\EventConfig.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\Event\EventController.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\Event\EventManager.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\GameState\GameMenu.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\GameState\GameStart.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\GameState\GameStateBalcony.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\GameState\GameStateBathRoom.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\GameState\GameStateClean.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\GameState\GameStateClothing.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\GameState\GameStateDaughterRoom.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\GameState\GameStateDining.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\GameState\GameStateDiningTable.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\GameState\GameStateGarage.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\GameState\GameStateHall.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\GameState\GameStateIcebox.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\GameState\GameStateKitchen.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\GameState\GameStateMainRoom.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\GameState\GameStateMainUI.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\GameState\GameStateManager.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\GameState\GameStateMenu.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\GameState\GameStateNull.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\GameState\GameStateOutDoor.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\GameState\GameStateSecondFloor.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\GameState\GameStateStudyRoom.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\Garage\GarageUI.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\Garage\OpenBlackAction.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\Garage\SeedAction.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\Garage\WaterBottleAction.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\HallScene\HallHitUI.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\Kitchen\BrainAction.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\Kitchen\CleanUI.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\Kitchen\IceboxHitUI.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\Kitchen\IceboxUI.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\Kitchen\KitchenHitUI.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\MainRoom\CoinAction.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\MainRoom\MainRoomPictureAction.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\MainRoom\MainRoomUI.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\MainRoom\PictureBackAction.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\OutDoorScene\CloseDoorAnimationMessage.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\OutDoorScene\EnterHouseAction.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\OutDoorScene\OpenDoorAction.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\OutDoorScene\OpenDoorAndShowGhostAvtion.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\OutDoorScene\OpenDoorAnimationMessage.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\OutDoorScene\ShowDoorAction.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\OutDoorScene\TryOpenDoorAction.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\SecondFloor\SecondFloorHitUI.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\StateMachine\GameStateBase.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\StateMachine\IStateBase.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\StateMachine\StateMachine.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\StudyRoom\BookAction.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\StudyRoom\NextPaperAction.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\StudyRoom\StudyRoomUI.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\UI\MainUI.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\UI\StartUI.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\UI\ToolItemUI.cs" />
+     <None Include="Assets\Lens Wetness\Core\LensWetness.shader" />
+     <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAlpha.shader" />
+     <None Include="Assets\TerribleTravel\Shaders\Particle Add.shader" />
+     <None Include="Assets\TerribleTravel\Shaders\UI-Multiply.shader" />
+     <None Include="Assets\Standard Assets\ParticleSystems\ParticleSystemsGuidelines.txt" />
+     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
+     <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAddSoft.shader" />
+     <None Include="Assets\Lens Wetness\Defocus\Resources\Defocus.shader" />
+     <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAdd.shader" />
+ <Reference Include="UnityEngine.UI">
+ <HintPath>D:/Program Files (x86)/unity5.3.6/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Networking">
+ <HintPath>D:/Program Files (x86)/unity5.3.6/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{EF65579C-369C-0AFC-2A71-F739063F7D38}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+    <ProjectReference Include="Assembly-UnityScript-firstpass.unityproj">
+      <Project>{C32E4BC7-69B4-66F9-322E-6C44F577DFB7}</Project>      <Name>Assembly-UnityScript-firstpass</Name>    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>

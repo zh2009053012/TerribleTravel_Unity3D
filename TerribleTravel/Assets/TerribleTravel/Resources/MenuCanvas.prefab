@@ -248,7 +248,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_id: 1
   m_repeat: 1
+<<<<<<< HEAD
   m_cursor: 1
+=======
+  m_cursor: 2
+>>>>>>> 22c30b62de18efd2e3459c0e8953c606d13d33fc
   m_triggerMsg: 
   m_hint: 
   m_openShowGO: {fileID: 0}
@@ -406,7 +410,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
