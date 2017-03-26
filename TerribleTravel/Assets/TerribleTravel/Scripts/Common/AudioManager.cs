@@ -63,7 +63,7 @@ public class AudioManager : MonoBehaviour {
 	}
 	public void PlayAudio(AudioClip clip, bool loop = false){
 		AudioSource trySrc;
-		if(loop && TryGetProcessAudio(name, out trySrc)){
+		if(loop && TryGetProcessAudio(clip.name, out trySrc)){
 			if(!trySrc.isPlaying)
 				trySrc.Play();
 			return;

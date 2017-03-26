@@ -464,8 +464,8 @@ Camera:
   m_GameObject: {fileID: 112554}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0.019607844}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0.019607844}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -607,9 +607,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_id: 1
+  m_repeat: 1
   m_cursor: 1
   m_triggerMsg: 
   m_hint: "\u53D1\u9709\u7684\u676F\u5B50"
+  m_openShowGO: {fileID: 0}
+  m_closeShowGO: {fileID: 0}
+  m_closeHideGO: {fileID: 0}
   m_actionList:
   - {fileID: 11486794}
 --- !u!114 &11405738
@@ -752,9 +756,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_id: 1
+  m_repeat: 1
   m_cursor: 1
   m_triggerMsg: 
   m_hint: "\u957F\u6EE1\u7EFF\u9508\u7684\u94DC\u76D8"
+  m_openShowGO: {fileID: 0}
+  m_closeShowGO: {fileID: 0}
+  m_closeHideGO: {fileID: 0}
   m_actionList:
   - {fileID: 11428852}
 --- !u!114 &11417828
@@ -996,9 +1004,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_id: 1
+  m_repeat: 1
   m_cursor: 3
   m_triggerMsg: 
   m_hint: 
+  m_openShowGO: {fileID: 0}
+  m_closeShowGO: {fileID: 0}
+  m_closeHideGO: {fileID: 0}
   m_actionList: []
 --- !u!114 &11441220
 MonoBehaviour:
@@ -1012,9 +1024,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_id: 1
+  m_repeat: 1
   m_cursor: 1
   m_triggerMsg: 
   m_hint: "\u8FD9\u91CC\u4F3C\u4E4E\u6709\u4EC0\u4E48"
+  m_openShowGO: {fileID: 0}
+  m_closeShowGO: {fileID: 0}
+  m_closeHideGO: {fileID: 0}
   m_actionList:
   - {fileID: 11493384}
 --- !u!114 &11445014
@@ -1385,9 +1401,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_id: 1
+  m_repeat: 1
   m_cursor: 1
   m_triggerMsg: 
   m_hint: 
+  m_openShowGO: {fileID: 0}
+  m_closeShowGO: {fileID: 0}
+  m_closeHideGO: {fileID: 0}
   m_actionList:
   - {fileID: 11417828}
 --- !u!114 &11468876
@@ -1617,9 +1637,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_id: 1
+  m_repeat: 1
   m_cursor: 1
   m_triggerMsg: "\u83B7\u5F97\u6728\u8D28\u80C3"
   m_hint: 
+  m_openShowGO: {fileID: 0}
+  m_closeShowGO: {fileID: 0}
+  m_closeHideGO: {fileID: 0}
   m_actionList:
   - {fileID: 11456098}
 --- !u!114 &11486358
@@ -1720,7 +1744,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 1
+  m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -2301,10 +2325,10 @@ RectTransform:
   - {fileID: 22451810}
   m_Father: {fileID: 22435866}
   m_RootOrder: 0
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &22477848
 RectTransform:

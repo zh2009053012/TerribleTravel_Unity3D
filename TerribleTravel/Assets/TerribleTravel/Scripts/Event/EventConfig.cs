@@ -71,5 +71,53 @@ public class EventConfig {
 		//clothing room->head4
 		EventData e7 = new EventData(7, new int[]{});
 		AddData (e7);
+		//bathroom mirror
+		EventData e8 = new EventData(8, new int[]{});
+		AddData (e8);
+		//bathroom window
+		EventData e9 = new EventData(9, new int[]{8});
+		AddData (e9);
+		//bathroom bathtub
+		EventData e10 = new EventData(10, new int[]{9});
+		AddData (e10);
+		//bathroon hand
+		EventData e11 = new EventData(11, new int[]{10});
+		AddData (e11);
+		//daughterroom droplight down
+		EventData e12 = new EventData(12, new int[]{});
+		AddData (e12);
+		//daughterroom heart
+		EventData e13 = new EventData(13, new int[]{12});
+		AddData (e13);
+		//mainroom picture
+		EventData e14 = new EventData(14, new int[]{});
+		AddData (e14);
+		//mainroom back picture
+		EventData e15 = new EventData(15, new int[]{14});
+		AddData (e15);
+		//mainroom coin
+		EventData e16 = new EventData(16, new int[]{15});
+		AddData (e16);
+		//balcony painter
+		EventData e17 = new EventData(17, new int[]{});
+		AddData (e17);
+		//balcony lung
+		EventData e18 = new EventData(18, new int[]{17});
+		AddData (e18);
+		//garage waterbottle
+		EventData e19 = new EventData(19, new int[]{});
+		AddData (e19);
+		//garage open white car
+		EventData e20 = new EventData(20, new int[]{});
+		AddData (e20);
+		//garage black seed
+		EventData e21 = new EventData(21, new int[]{});
+		AddData (e21);
+		//garage clean seed
+		EventData e22 = new EventData(22, new int[]{});
+		AddData (e22);
+		//garage get seed
+		EventData e23 = new EventData(23, new int[]{22});
+		AddData (e23);
 	}
 }

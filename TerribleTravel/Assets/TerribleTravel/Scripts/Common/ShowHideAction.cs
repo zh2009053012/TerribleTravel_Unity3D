@@ -8,11 +8,11 @@ public class ShowHideAction : ActionBase {
 	public GameObject m_hide;
 	public override void Play (int eventID)
 	{
-		if (m_isPlaying) {
-			return;
-		} else {
-			m_isPlaying = true;
-		}
+//		if (m_isPlaying) {
+//			return;
+//		} else {
+//			m_isPlaying = true;
+//		}
 		if (m_next != null) {
 			m_next.SetActive (true);
 		}
@@ -22,7 +22,9 @@ public class ShowHideAction : ActionBase {
 		if (null != m_hide) {
 			m_hide.SetActive (false);
 		}
-		GetComponent<Image> ().raycastTarget = false;
+		//GetComponent<Image> ().raycastTarget = false;
 		NotifyActionOverEvent();
+		Debug.Log("notify");
+		CursorManager.SetCursor(CursorManager.CursorState.DEFAULT);
 	}
 }

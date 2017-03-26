@@ -21,6 +21,8 @@ public class GameStateMainUI : IStateBase {
 	}
 	//
 	MainUI uiCtr;
+	ToolItemUI curSelCtr;
+	string m_curEnter="";
 	public void Enter(GameStateBase owner)
 	{
 		GameObject prefab = Resources.Load ("MainUICanvas")as GameObject;
@@ -54,6 +56,38 @@ public class GameStateMainUI : IStateBase {
 			uiCtr.ShowEye (true);
 		} else if (message.Equals ("GetHead")) {
 			uiCtr.ShowHead (true);
+		} else if(message.Equals("GetFinger")){
+			uiCtr.ShowFinger(true);
+		} else if(message.Equals("GetHeart")){
+			uiCtr.ShowHeart(true);
+		} else if(message.Equals("GetCoin")){
+			uiCtr.ShowCoin(true);
+		}else if(message.Equals("GetLung")){
+			uiCtr.ShowLung(true);
+		}else if(message.Equals("GetSeed")){
+			uiCtr.ShowSeed(true);
+		} else if(message.Equals("GetWaterBottle")){
+			uiCtr.ShowWaterBottle(true);
+		} else if(message.Equals("TryUseWaterBottle")){
+			if(curSelCtr.key.Equals(m_curEnter)){
+				curSelCtr.Reset();
+				GameData.HasWaterBottle = false;
+				uiCtr.ShowWaterBottle(false);
+				GameStateManager.Instance().FSM.CurrentState.Message("UseWaterBottle", null);
+			}else{
+				curSelCtr.Reset();
+			}
+			//
+			curSelCtr = null;
+		} else if(message.Equals("SelectToolItem")){
+			if(null != curSelCtr){
+				curSelCtr.Reset();
+			}
+			curSelCtr = (ToolItemUI)parameters[0];
+		} else if(message.Equals("EnterTarget")){
+			m_curEnter = (string)parameters[0];
+		}else if(message.Equals("ExitTarget")){
+			m_curEnter = "";
 		}
 	}
 }

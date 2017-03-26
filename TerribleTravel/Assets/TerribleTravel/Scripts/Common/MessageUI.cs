@@ -13,12 +13,14 @@ public class MessageUI : MonoBehaviour {
 	private MessageCallbackEvent m_callback;
 
 	private static GameObject prefab;
-	public static void AutoShowMessage(string msg, bool hasMask, MessageCallbackEvent e, float showTime){
+	public static MessageUI AutoShowMessage(string msg, bool hasMask, MessageCallbackEvent e, float showTime){
+		Debug.Log("msg uui");
 		if(null == prefab)
 			prefab = Resources.Load ("MessageCanvas")as GameObject;
 		GameObject go = GameObject.Instantiate (prefab);
 		MessageUI uiCtr = go.GetComponent<MessageUI> ();
 		uiCtr.ShowMessage (msg, hasMask, e, showTime);
+		return uiCtr;
 	}
 
 	public void Init()
@@ -31,14 +33,12 @@ public class MessageUI : MonoBehaviour {
 	{
 		m_maskImage.gameObject.SetActive (hasMask);
 		m_callback = e;
-		m_isHitClose = true;
+		m_isHitClose = false;
 		//m_messageText.color = Color.white;
 		SetMessage(message);
 		this.gameObject.SetActive(true);
 
-		//StartCoroutine(Hide(showTime));
-		AutoDestroy adCtr = this.gameObject.AddComponent<AutoDestroy> ();
-		adCtr.AutoDestroyAfterSeconds (showTime);
+		StartCoroutine(Hide(showTime));
 	}
 	public void ShowMessage(string message, bool hasMask, float showTime=3)
 	{
@@ -48,9 +48,9 @@ public class MessageUI : MonoBehaviour {
 		//m_messageText.color = Color.white;
 		SetMessage(message);
 		this.gameObject.SetActive(true);
-		//StartCoroutine(Hide(showTime));
-		AutoDestroy adCtr = this.gameObject.AddComponent<AutoDestroy> ();
-		adCtr.AutoDestroyAfterSeconds (showTime);
+		StartCoroutine(Hide(showTime));
+//		AutoDestroy adCtr = this.gameObject.AddComponent<AutoDestroy> ();
+//		adCtr.AutoDestroyAfterSeconds (showTime);
 	}
 	public void ShowMessage(string message, Color color, float showTime, bool isHitClose, MessageCallbackEvent e)
 	{
@@ -60,9 +60,9 @@ public class MessageUI : MonoBehaviour {
 		m_messageText.color = color;
 		SetMessage(message);
 		this.gameObject.SetActive(true);
-		//StartCoroutine(Hide(showTime));
-		AutoDestroy adCtr = this.gameObject.AddComponent<AutoDestroy> ();
-		adCtr.AutoDestroyAfterSeconds (showTime);
+		StartCoroutine(Hide(showTime));
+//		AutoDestroy adCtr = this.gameObject.AddComponent<AutoDestroy> ();
+//		adCtr.AutoDestroyAfterSeconds (showTime);
 	}
 
 	private void SetMessage(string message)

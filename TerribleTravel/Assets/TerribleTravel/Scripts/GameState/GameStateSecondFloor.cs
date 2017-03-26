@@ -44,15 +44,15 @@ public class GameStateSecondFloor : IStateBase {
 	public void Message(string message, object[] parameters)
 	{
 		if (message.Equals ("Balcony")) {
-			GameStateManager.Instance ().FSM.ChangeState (GameStateNull.Instance ());
+			GameStateManager.Instance ().FSM.ChangeState (GameStateBalcony.Instance ());
 		} else if (message.Equals ("Study")) {
-			GameStateManager.Instance ().FSM.ChangeState (GameStateNull.Instance ());
+			GameStateManager.Instance ().FSM.ChangeState (GameStateStudyRoom.Instance ());
 		} else if (message.Equals ("DaughterRoom")) {
-			GameStateManager.Instance ().FSM.ChangeState (GameStateNull.Instance ());
+			GameStateManager.Instance ().FSM.ChangeState (GameStateDaughterRoom.Instance ());
 		} else if (message.Equals ("BathRoom")) {
-			GameStateManager.Instance ().FSM.ChangeState (GameStateNull.Instance ());
+			GameStateManager.Instance ().FSM.ChangeState (GameStateBathRoom.Instance ());
 		} else if (message.Equals ("MainBedRoom")) {
-			GameStateManager.Instance ().FSM.ChangeState (GameStateNull.Instance ());
+			GameStateManager.Instance ().FSM.ChangeState (GameStateMainRoom.Instance ());
 		} else if (message.Equals ("Out")) {
 			GameStateManager.Instance ().FSM.ChangeState (GameStateHall.Instance ());
 		}

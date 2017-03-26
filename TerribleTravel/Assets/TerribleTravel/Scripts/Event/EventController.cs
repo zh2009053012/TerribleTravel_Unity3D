@@ -17,6 +17,8 @@ public class EventController : MonoBehaviour {
 	[SerializeField]
 	protected GameObject m_openShowGO;
 	[SerializeField]
+	protected GameObject m_openHideGO;
+	[SerializeField]
 	protected GameObject m_closeShowGO;
 	[SerializeField]
 	protected GameObject m_closeHideGO;
@@ -60,7 +62,11 @@ public class EventController : MonoBehaviour {
 		}
 		else if (IsOpen) {
 			if (null != m_openShowGO) {
+				Debug.Log("open show");
 				m_openShowGO.SetActive (true);
+			}
+			if(null != m_openHideGO){
+				m_openHideGO.SetActive(false);
 			}
 		}
 	}
@@ -89,6 +95,8 @@ public class EventController : MonoBehaviour {
 	void Update(){
 		
 	}
+	//
+	MessageUI m_msgCtr;
 	public void OnCursorEnter(){
 		if(IsOpen){
 			if (!m_repeat && IsClose) {
@@ -97,7 +105,12 @@ public class EventController : MonoBehaviour {
 			m_isTrigger = true;
 			CursorManager.SetCursor(m_cursor);
 			if (!string.IsNullOrEmpty (m_hint)) {
-				MessageUI.AutoShowMessage (m_hint, false, null, 1);
+				m_msgCtr = MessageUI.AutoShowMessage (m_hint, false, ()=>{
+					if(null != m_msgCtr){
+						GameObject.Destroy(m_msgCtr.gameObject);
+						m_msgCtr = null;
+					}
+				}, 1);
 			}
 		}
 	}
@@ -105,14 +118,26 @@ public class EventController : MonoBehaviour {
 		//Debug.Log ("exit");
 		if(m_isTrigger)
 		{
+			if(null != m_msgCtr){
+				GameObject.Destroy(m_msgCtr.gameObject);
+				m_msgCtr = null;
+			}
 			m_isTrigger = false;
 			CursorManager.SetCursor(CursorManager.CursorState.DEFAULT);
 		}
 	}
+	//
+	MessageUI m_triggerMsgCtr;
 	public void OnCursorSelect(){
 		if(m_isTrigger){
 			if (!string.IsNullOrEmpty (m_triggerMsg)) {
-				MessageUI.AutoShowMessage (m_triggerMsg, true, null, 2);
+				m_triggerMsgCtr = MessageUI.AutoShowMessage (m_triggerMsg, true, ()=>{
+					if(null != m_triggerMsgCtr){
+
+						GameObject.Destroy(m_triggerMsgCtr.gameObject);
+						m_triggerMsgCtr = null;
+					}
+				}, 2);
 			}
 			Play();
 		}

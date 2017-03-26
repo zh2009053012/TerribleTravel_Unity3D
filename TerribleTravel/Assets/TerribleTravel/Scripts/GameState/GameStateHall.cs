@@ -50,7 +50,7 @@ public class GameStateHall : IStateBase {
 		} else if (message.Equals ("DiningRoom")) {
 			GameStateManager.Instance ().FSM.ChangeState (GameStateDining.Instance ());
 		} else if (message.Equals ("UndergroundGarage")) {
-			GameStateManager.Instance ().FSM.ChangeState (GameStateNull.Instance ());
+			GameStateManager.Instance ().FSM.ChangeState (GameStateGarage.Instance ());
 		} else if (message.Equals ("SecondFloor")) {
 			GameStateManager.Instance ().FSM.ChangeState (GameStateSecondFloor.Instance ());
 		}
