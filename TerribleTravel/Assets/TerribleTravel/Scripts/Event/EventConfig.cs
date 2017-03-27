@@ -119,5 +119,11 @@ public class EventConfig {
 		//garage get seed
 		EventData e23 = new EventData(23, new int[]{22});
 		AddData (e23);
+		//studyroom ghost
+		EventData e24 = new EventData(24, new int[]{});
+		AddData (e24);
+		//studyroom computer hit
+		EventData e25 = new EventData(25, new int[]{24});
+		AddData (e25);
 	}
 }

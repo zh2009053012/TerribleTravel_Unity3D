@@ -43,6 +43,8 @@ public class GameStateOutDoor : IStateBase {
 
 	public void Message(string message, object[] parameters)
 	{
-
+		if(message.Equals("EnterHouse")){
+			GameStateManager.Instance().FSM.ChangeState(GameStateHall.Instance());
+		}
 	}
 }

@@ -33,7 +33,7 @@ public class EventController : MonoBehaviour {
 			//Debug.Log("Check IsOpen:"+m_id+ed.m_openRequiredList.Count);
 			foreach(int requiredID in ed.m_openRequiredList){
 				if(!EventManager.IsEventClose(requiredID)){
-					Debug.Log("not open");
+					//Debug.Log("not open");
 					return false;
 				}
 			}
@@ -85,7 +85,7 @@ public class EventController : MonoBehaviour {
 			IsClose = true;
 			return;
 		}
-		Debug.Log ("action list:"+m_actionList.Count);
+		//Debug.Log ("action list:"+m_actionList.Count);
 		foreach(ActionBase ab in m_actionList){
 			ab.AddActionOverNotify(OnActionOver);
 			ab.Play(m_id);
@@ -98,9 +98,9 @@ public class EventController : MonoBehaviour {
 	//
 	MessageUI m_msgCtr;
 	public void OnCursorEnter(){
-		Debug.Log (IsOpen);
+		//Debug.Log (IsOpen);
 		if(IsOpen){
-			Debug.Log ("enter");
+			//Debug.Log ("enter");
 			if (!m_repeat && IsClose) {
 				return;
 			}

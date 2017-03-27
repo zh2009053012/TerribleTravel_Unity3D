@@ -1,2 +1,6 @@
-Base path: D:/Program Files/Unity5_3_6/Editor/Data
+Base path: D:/Program Files (x86)/unity5.3.6/Editor/Data
 Cmd: getPlatforms
+Cmd: preprocess
+  insize=2274 outsize=1042 ok=1
+Cmd: preprocess
+  insize=3271 outsize=495 ok=1

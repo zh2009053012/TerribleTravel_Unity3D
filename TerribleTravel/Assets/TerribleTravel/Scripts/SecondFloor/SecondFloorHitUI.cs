@@ -8,9 +8,9 @@ public class SecondFloorHitUI : MonoBehaviour {
 	}
 	MessageUI msgCtr;
 	public void OnStudyClick(){
-//		if(GameData.HasBrain && GameData.HasCoin && GameData.HasEye && GameData.HasFinger &&
-//			GameData.HasHead && GameData.HasHeart && GameData.HasLung && GameData.HasSeed && GameData.HasStomach)
-		if(true)
+		if(GameData.HasBrain && GameData.HasCoin && GameData.HasEye && GameData.HasFinger &&
+			GameData.HasHead && GameData.HasHeart && GameData.HasLung && GameData.HasSeed && GameData.HasStomach)
+//		if(true)
 		{
 			GameStateManager.Instance ().FSM.CurrentState.Message ("Study", null);
 		}else{

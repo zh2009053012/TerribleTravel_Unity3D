@@ -327,6 +327,7 @@ MonoBehaviour:
   m_triggerMsg: 
   m_hint: 
   m_openShowGO: {fileID: 0}
+  m_openHideGO: {fileID: 0}
   m_closeShowGO: {fileID: 0}
   m_closeHideGO: {fileID: 0}
   m_actionList: []
@@ -528,6 +529,7 @@ MonoBehaviour:
     \u53EF\u5269\u4E0B\u7684\u4E00\u53EA\u773C\u775B\u4F3C\u4E4E\u5728\u6CE8\u89C6\u7740\u9AD8\u811A\u676F"
   m_hint: 
   m_openShowGO: {fileID: 0}
+  m_openHideGO: {fileID: 0}
   m_closeShowGO: {fileID: 195250}
   m_closeHideGO: {fileID: 0}
   m_actionList: []
@@ -637,8 +639,9 @@ MonoBehaviour:
   m_repeat: 1
   m_cursor: 3
   m_triggerMsg: 
-  m_hint: 
+  m_hint: "\u5927\u5385"
   m_openShowGO: {fileID: 0}
+  m_openHideGO: {fileID: 0}
   m_closeShowGO: {fileID: 0}
   m_closeHideGO: {fileID: 0}
   m_actionList: []

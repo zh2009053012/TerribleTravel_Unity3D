@@ -9,11 +9,7 @@ public class EnterHouseAction : ActionBase {
 	}
 	
 	public override void Play(int eventID){
-		if (m_isPlaying) {
-			return;
-		} else {
-			m_isPlaying = true;
-		}
+		GameStateManager.Instance().FSM.CurrentState.Message("EnterHouse", null);
 		//
 		NotifyActionOverEvent ();
 	}

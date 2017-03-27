@@ -1117,7 +1117,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_id: 1
   m_repeat: 1
-  m_cursor: 2
+  m_cursor: 3
   m_triggerMsg: 
   m_hint: "\u5927\u5385"
   m_openShowGO: {fileID: 0}
