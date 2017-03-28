@@ -14,7 +14,7 @@ public class MessageUI : MonoBehaviour {
 
 	private static GameObject prefab;
 	public static MessageUI AutoShowMessage(string msg, bool hasMask, MessageCallbackEvent e, float showTime){
-		Debug.Log("msg uui");
+		//Debug.Log("msg uui");
 		if(null == prefab)
 			prefab = Resources.Load ("MessageCanvas")as GameObject;
 		GameObject go = GameObject.Instantiate (prefab);

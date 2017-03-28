@@ -483,6 +483,7 @@ MonoBehaviour:
   m_triggerMsg: 
   m_hint: "\u4E00\u4E2A\u5934\u9AA8"
   m_openShowGO: {fileID: 0}
+  m_openHideGO: {fileID: 0}
   m_closeShowGO: {fileID: 0}
   m_closeHideGO: {fileID: 140830}
   m_actionList:
@@ -504,6 +505,7 @@ MonoBehaviour:
   m_triggerMsg: 
   m_hint: 
   m_openShowGO: {fileID: 0}
+  m_openHideGO: {fileID: 0}
   m_closeShowGO: {fileID: 0}
   m_closeHideGO: {fileID: 0}
   m_actionList: []
@@ -551,6 +553,7 @@ MonoBehaviour:
   m_triggerMsg: "\u83B7\u5F97\u6728\u8D28\u5934\u9AA8"
   m_hint: 
   m_openShowGO: {fileID: 107830}
+  m_openHideGO: {fileID: 0}
   m_closeShowGO: {fileID: 0}
   m_closeHideGO: {fileID: 107830}
   m_actionList:
@@ -640,6 +643,7 @@ MonoBehaviour:
   m_triggerMsg: 
   m_hint: "\u4E00\u4E2A\u5934\u9AA8"
   m_openShowGO: {fileID: 0}
+  m_openHideGO: {fileID: 0}
   m_closeShowGO: {fileID: 0}
   m_closeHideGO: {fileID: 150364}
   m_actionList:
@@ -1180,6 +1184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_headHit: {fileID: 139748}
+  m_headEvent: {fileID: 11416302}
   m_ani: {fileID: 9549660}
 --- !u!114 &11486664
 MonoBehaviour:
@@ -1273,6 +1278,7 @@ MonoBehaviour:
   m_triggerMsg: 
   m_hint: "\u4E00\u4E2A\u5934\u9AA8"
   m_openShowGO: {fileID: 0}
+  m_openHideGO: {fileID: 0}
   m_closeShowGO: {fileID: 0}
   m_closeHideGO: {fileID: 141256}
   m_actionList:

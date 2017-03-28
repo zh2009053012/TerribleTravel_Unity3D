@@ -125,5 +125,11 @@ public class EventConfig {
 		//studyroom computer hit
 		EventData e25 = new EventData(25, new int[]{24});
 		AddData (e25);
+		//daughterroom dresser
+		EventData e26 = new EventData(26, new int[]{});
+		AddData (e26);
+		//bathroom mirror open broken mirror
+		EventData e27 = new EventData(27, new int[]{});
+		AddData (e27);
 	}
 }

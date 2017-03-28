@@ -1850,6 +1850,7 @@ MonoBehaviour:
   m_triggerMsg: 
   m_hint: "\u4E8C\u697C"
   m_openShowGO: {fileID: 0}
+  m_openHideGO: {fileID: 0}
   m_closeShowGO: {fileID: 0}
   m_closeHideGO: {fileID: 0}
   m_actionList: []
@@ -1870,6 +1871,7 @@ MonoBehaviour:
   m_triggerMsg: 
   m_hint: 
   m_openShowGO: {fileID: 0}
+  m_openHideGO: {fileID: 0}
   m_closeShowGO: {fileID: 0}
   m_closeHideGO: {fileID: 111070}
   m_actionList:
@@ -1918,6 +1920,7 @@ MonoBehaviour:
   m_triggerMsg: 
   m_hint: "\u770B\u4E0D\u5230\u955C\u5B50\u91CC\u7684\u6211"
   m_openShowGO: {fileID: 0}
+  m_openHideGO: {fileID: 0}
   m_closeShowGO: {fileID: 106410}
   m_closeHideGO: {fileID: 0}
   m_actionList:
@@ -2566,6 +2569,7 @@ MonoBehaviour:
   m_triggerMsg: 
   m_hint: "\u4F3C\u4E4E\u6709\u4EBA\u5F71\u95EA\u8FC7"
   m_openShowGO: {fileID: 0}
+  m_openHideGO: {fileID: 0}
   m_closeShowGO: {fileID: 0}
   m_closeHideGO: {fileID: 0}
   m_actionList:
@@ -2622,6 +2626,7 @@ MonoBehaviour:
   m_triggerMsg: "\u83B7\u5F97\u6728\u5076\u65AD\u6307"
   m_hint: "\u65AD\u6307\uFF1F"
   m_openShowGO: {fileID: 0}
+  m_openHideGO: {fileID: 0}
   m_closeShowGO: {fileID: 0}
   m_closeHideGO: {fileID: 0}
   m_actionList:
@@ -2637,12 +2642,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c62d22b7a5e355d47ae23c9c9f754120, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_id: 1
+  m_id: 27
   m_repeat: 0
   m_cursor: 1
   m_triggerMsg: 
   m_hint: "\u955C\u5B50\uFF1F"
   m_openShowGO: {fileID: 0}
+  m_openHideGO: {fileID: 0}
   m_closeShowGO: {fileID: 0}
   m_closeHideGO: {fileID: 148428}
   m_actionList:
@@ -2691,6 +2697,7 @@ MonoBehaviour:
   m_triggerMsg: 
   m_hint: 
   m_openShowGO: {fileID: 0}
+  m_openHideGO: {fileID: 0}
   m_closeShowGO: {fileID: 0}
   m_closeHideGO: {fileID: 0}
   m_actionList:
@@ -2712,6 +2719,7 @@ MonoBehaviour:
   m_triggerMsg: 
   m_hint: "\u6C34\u91CC\u597D\u50CF\u6709\u4E1C\u897F"
   m_openShowGO: {fileID: 0}
+  m_openHideGO: {fileID: 0}
   m_closeShowGO: {fileID: 0}
   m_closeHideGO: {fileID: 127802}
   m_actionList:

@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class ClothingUI : MonoBehaviour {
 	public GameObject m_headHit;
+	public EventController m_headEvent;
 	public Animator m_ani;
 
 	public void Init(bool haveHead){
@@ -15,7 +16,8 @@ public class ClothingUI : MonoBehaviour {
 		GameStateManager.Instance ().FSM.CurrentState.Message ("Out", null);
 	}
 	public void OnHeadClick(){
-		m_ani.SetBool ("play", true);
+		if(m_headEvent.IsOpen)
+			m_ani.SetBool ("play", true);
 		//m_headGO.SetActive (false);
 	}
 	public void OnShowHeadAniOver(){
