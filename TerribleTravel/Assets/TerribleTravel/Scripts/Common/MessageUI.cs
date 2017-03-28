@@ -71,7 +71,7 @@ public class MessageUI : MonoBehaviour {
 		m_messageText.text = message;
 		float width = m_messageText.preferredWidth;
 		m_messageText.rectTransform.sizeDelta = new Vector2(width, m_messageText.rectTransform.sizeDelta.y);
-		m_bg.rectTransform.sizeDelta = new Vector2(width+40, m_bg.rectTransform.sizeDelta.y);
+		m_bg.rectTransform.sizeDelta = new Vector2(width+100, m_bg.rectTransform.sizeDelta.y+40);
 	}
 
 	private IEnumerator Hide(float time)

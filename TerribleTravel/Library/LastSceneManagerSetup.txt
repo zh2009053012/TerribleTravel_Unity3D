@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/TerribleTravel/Scene/HomeScene.unity
+- path: Assets/TerribleTravel/Scene/GameScene.unity
   isLoaded: 1
   isActive: 1
