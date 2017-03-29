@@ -23,9 +23,14 @@ public class GameStateBalcony : IStateBase {
 	public void Enter(GameStateBase owner)
 	{
 		CursorManager.SetCursor (CursorManager.CursorState.DEFAULT);
-		GameObject prefab = Resources.Load ("BalconyScene")as GameObject;
-		GameObject go = GameObject.Instantiate (prefab);
-		uiCtr = go.GetComponent<BalconyUI> ();
+//		GameObject prefab = Resources.Load ("BalconyScene")as GameObject;
+//		GameObject go = GameObject.Instantiate (prefab);
+//		uiCtr = go.GetComponent<BalconyUI> ();
+		//
+		ResourcesManager.Instance.Load("BalconyScene", (Object asset)=>{
+			GameObject go = GameObject.Instantiate ((GameObject)asset);
+			uiCtr = go.GetComponent<BalconyUI> ();
+		});
 	}
 
 	public void Execute(GameStateBase owner)

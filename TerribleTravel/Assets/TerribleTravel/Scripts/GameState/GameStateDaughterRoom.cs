@@ -24,9 +24,13 @@ public class GameStateDaughterRoom : IStateBase {
 	public void Enter(GameStateBase owner)
 	{
 		CursorManager.SetCursor (CursorManager.CursorState.DEFAULT);
-		GameObject prefab = Resources.Load ("DaughterRoomScene")as GameObject;
-		GameObject go = GameObject.Instantiate (prefab);
-		uiCtr = go.GetComponent<DaughterRoomUI> ();
+//		GameObject prefab = Resources.Load ("DaughterRoomScene")as GameObject;
+//		GameObject go = GameObject.Instantiate (prefab);
+//		uiCtr = go.GetComponent<DaughterRoomUI> ();
+		ResourcesManager.Instance.Load("DaughterRoomScene", (Object asset)=>{
+			GameObject go = GameObject.Instantiate ((GameObject)asset);
+			uiCtr = go.GetComponent<DaughterRoomUI> ();
+		});
 	}
 
 	public void Execute(GameStateBase owner)

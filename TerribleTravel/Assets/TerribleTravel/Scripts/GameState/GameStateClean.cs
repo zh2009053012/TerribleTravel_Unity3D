@@ -24,10 +24,15 @@ public class GameStateClean : IStateBase {
 	public void Enter(GameStateBase owner)
 	{
 		CursorManager.SetCursor (CursorManager.CursorState.DEFAULT);
-		GameObject prefab = Resources.Load ("CleanScene")as GameObject;
-		GameObject go = GameObject.Instantiate (prefab);
-		uiCtr = go.GetComponent<CleanUI> ();
-		uiCtr.Init (GameData.HasStomach);
+//		GameObject prefab = Resources.Load ("CleanScene")as GameObject;
+//		GameObject go = GameObject.Instantiate (prefab);
+//		uiCtr = go.GetComponent<CleanUI> ();
+//		uiCtr.Init (GameData.HasStomach);
+		ResourcesManager.Instance.Load("CleanScene", (Object asset)=>{
+			GameObject go = GameObject.Instantiate ((GameObject)asset);
+			uiCtr = go.GetComponent<CleanUI> ();
+			uiCtr.Init (GameData.HasStomach);
+		});
 	}
 
 	public void Execute(GameStateBase owner)

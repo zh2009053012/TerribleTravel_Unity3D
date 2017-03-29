@@ -24,10 +24,15 @@ public class GameStateClothing : IStateBase {
 	public void Enter(GameStateBase owner)
 	{
 		CursorManager.SetCursor (CursorManager.CursorState.DEFAULT);
-		GameObject prefab = Resources.Load ("ClothingScene")as GameObject;
-		GameObject go = GameObject.Instantiate (prefab);
-		uiCtr = go.GetComponent<ClothingUI> ();
-		uiCtr.Init (GameData.HasHead);
+//		GameObject prefab = Resources.Load ("ClothingScene")as GameObject;
+//		GameObject go = GameObject.Instantiate (prefab);
+//		uiCtr = go.GetComponent<ClothingUI> ();
+//		uiCtr.Init (GameData.HasHead);
+		ResourcesManager.Instance.Load("ClothingScene", (Object asset)=>{
+			GameObject go = GameObject.Instantiate ((GameObject)asset);
+			uiCtr = go.GetComponent<ClothingUI> ();
+			uiCtr.Init (GameData.HasHead);
+		});
 	}
 
 	public void Execute(GameStateBase owner)

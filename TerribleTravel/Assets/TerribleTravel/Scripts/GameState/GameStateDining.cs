@@ -24,10 +24,15 @@ public class GameStateDining : IStateBase {
 	public void Enter(GameStateBase owner)
 	{
 		CursorManager.SetCursor (CursorManager.CursorState.DEFAULT);
-		GameObject prefab = Resources.Load ("DiningScene")as GameObject;
-		GameObject go = GameObject.Instantiate (prefab);
-		uiCtr = go.GetComponent<DiningUI> ();
-		uiCtr.Init (GameData.HasEye);
+//		GameObject prefab = Resources.Load ("DiningScene")as GameObject;
+//		GameObject go = GameObject.Instantiate (prefab);
+//		uiCtr = go.GetComponent<DiningUI> ();
+//		uiCtr.Init (GameData.HasEye);
+		ResourcesManager.Instance.Load("DiningScene", (Object asset)=>{
+			GameObject go = GameObject.Instantiate ((GameObject)asset);
+			uiCtr = go.GetComponent<DiningUI> ();
+			uiCtr.Init (GameData.HasEye);
+		});
 	}
 
 	public void Execute(GameStateBase owner)

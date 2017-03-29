@@ -24,8 +24,11 @@ public class GameStateOutDoor : IStateBase {
 	GameObject go;
 	public void Enter(GameStateBase owner)
 	{
-		GameObject prefab = Resources.Load ("OutDoorScene")as GameObject;
-		go = GameObject.Instantiate (prefab);
+//		GameObject prefab = Resources.Load ("OutDoorScene")as GameObject;
+//		go = GameObject.Instantiate (prefab);
+		ResourcesManager.Instance.Load("OutDoorScene", (Object asset)=>{
+			go = GameObject.Instantiate ((GameObject)asset);
+		});
 	}
 
 	public void Execute(GameStateBase owner)

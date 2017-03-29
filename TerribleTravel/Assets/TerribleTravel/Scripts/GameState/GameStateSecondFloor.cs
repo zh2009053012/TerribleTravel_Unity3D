@@ -24,8 +24,13 @@ public class GameStateSecondFloor : IStateBase {
 	public void Enter(GameStateBase owner)
 	{
 		CursorManager.SetCursor (CursorManager.CursorState.DEFAULT);
-		GameObject prefab = Resources.Load ("SecondFloorScene")as GameObject;
-		go = GameObject.Instantiate (prefab);
+//		GameObject prefab = Resources.Load ("SecondFloorScene")as GameObject;
+//		go = GameObject.Instantiate (prefab);
+		ResourcesManager.Instance.Load("SecondFloorScene", (Object asset)=>{
+			go = GameObject.Instantiate ((GameObject)asset);
+
+
+		});
 	}
 
 	public void Execute(GameStateBase owner)

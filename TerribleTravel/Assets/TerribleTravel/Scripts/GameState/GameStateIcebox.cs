@@ -24,10 +24,15 @@ public class GameStateIcebox : IStateBase {
 	public void Enter(GameStateBase owner)
 	{
 		CursorManager.SetCursor (CursorManager.CursorState.DEFAULT);
-		GameObject prefab = Resources.Load ("IceboxScene")as GameObject;
-		GameObject go = GameObject.Instantiate (prefab);
-		uiCtr = go.GetComponent<IceboxUI> ();
-		uiCtr.Init (GameData.HasBrain);
+//		GameObject prefab = Resources.Load ("IceboxScene")as GameObject;
+//		GameObject go = GameObject.Instantiate (prefab);
+//		uiCtr = go.GetComponent<IceboxUI> ();
+//		uiCtr.Init (GameData.HasBrain);
+		ResourcesManager.Instance.Load("IceboxScene", (Object asset)=>{
+			GameObject go = GameObject.Instantiate ((GameObject)asset);
+			uiCtr = go.GetComponent<IceboxUI> ();
+			uiCtr.Init (GameData.HasBrain);
+		});
 	}
 
 	public void Execute(GameStateBase owner)

@@ -25,9 +25,13 @@ public class GameStateMainRoom : IStateBase {
 	public void Enter(GameStateBase owner)
 	{
 		CursorManager.SetCursor (CursorManager.CursorState.DEFAULT);
-		GameObject prefab = Resources.Load ("MainRoomScene")as GameObject;
-		GameObject go = GameObject.Instantiate (prefab);
-		uiCtr = go.GetComponent<MainRoomUI> ();
+//		GameObject prefab = Resources.Load ("MainRoomScene")as GameObject;
+//		GameObject go = GameObject.Instantiate (prefab);
+//		uiCtr = go.GetComponent<MainRoomUI> ();
+		ResourcesManager.Instance.Load("MainRoomScene", (Object asset)=>{
+			GameObject go = GameObject.Instantiate ((GameObject)asset);
+			uiCtr = go.GetComponent<MainRoomUI> ();
+		});
 	}
 
 	public void Execute(GameStateBase owner)

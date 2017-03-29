@@ -24,9 +24,13 @@ public class GameStateGarage : IStateBase {
 	public void Enter(GameStateBase owner)
 	{
 		CursorManager.SetCursor (CursorManager.CursorState.DEFAULT);
-		GameObject prefab = Resources.Load ("GarageScene")as GameObject;
-		GameObject go = GameObject.Instantiate (prefab);
-		uiCtr = go.GetComponent<GarageUI>();
+//		GameObject prefab = Resources.Load ("GarageScene")as GameObject;
+//		GameObject go = GameObject.Instantiate (prefab);
+//		uiCtr = go.GetComponent<GarageUI>();
+		ResourcesManager.Instance.Load("GarageScene", (Object asset)=>{
+			GameObject go = GameObject.Instantiate ((GameObject)asset);
+			uiCtr = go.GetComponent<GarageUI> ();
+		});
 	}
 
 	public void Execute(GameStateBase owner)

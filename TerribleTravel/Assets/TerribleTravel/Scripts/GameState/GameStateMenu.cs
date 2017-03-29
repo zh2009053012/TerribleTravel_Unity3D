@@ -27,8 +27,11 @@ public class GameStateMenu : IStateBase {
 	{
 		m_owner = (GameMenu)owner;
 		CursorManager.SetCursor (CursorManager.CursorState.DEFAULT);
-		GameObject prefab = Resources.Load ("MenuCanvas")as GameObject;
-		go = GameObject.Instantiate (prefab);
+//		GameObject prefab = Resources.Load ("MenuCanvas")as GameObject;
+//		go = GameObject.Instantiate (prefab);
+		ResourcesManager.Instance.Load("MenuCanvas", (Object asset)=>{
+			go = GameObject.Instantiate ((GameObject)asset);
+		});
 	}
 
 	public void Execute(GameStateBase owner)

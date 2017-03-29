@@ -24,9 +24,13 @@ public class GameStateBathRoom : IStateBase {
 	public void Enter(GameStateBase owner)
 	{
 		CursorManager.SetCursor (CursorManager.CursorState.DEFAULT);
-		GameObject prefab = Resources.Load ("BathRoomScene")as GameObject;
-		GameObject go = GameObject.Instantiate (prefab);
-		uiCtr = go.GetComponent<BathRoomUI> ();
+//		GameObject prefab = Resources.Load ("BathRoomScene")as GameObject;
+//		GameObject go = GameObject.Instantiate (prefab);
+//		uiCtr = go.GetComponent<BathRoomUI> ();
+		ResourcesManager.Instance.Load("BathRoomScene", (Object asset)=>{
+			GameObject go = GameObject.Instantiate ((GameObject)asset);
+			uiCtr = go.GetComponent<BathRoomUI> ();
+		});
 
 	}
 

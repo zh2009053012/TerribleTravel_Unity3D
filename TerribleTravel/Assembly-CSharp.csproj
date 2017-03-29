@@ -67,6 +67,7 @@
      <Compile Include="Assets\TerribleTravel\Scripts\Common\GameData.cs" />
      <Compile Include="Assets\TerribleTravel\Scripts\Common\MessageUI.cs" />
      <Compile Include="Assets\TerribleTravel\Scripts\Common\PlayMovie.cs" />
+     <Compile Include="Assets\TerribleTravel\Scripts\Common\ResourcesManager.cs" />
      <Compile Include="Assets\TerribleTravel\Scripts\Common\ShowHideAction.cs" />
      <Compile Include="Assets\TerribleTravel\Scripts\DaughterRoom\BedGhostAction.cs" />
      <Compile Include="Assets\TerribleTravel\Scripts\DaughterRoom\DaughterRoomUI.cs" />

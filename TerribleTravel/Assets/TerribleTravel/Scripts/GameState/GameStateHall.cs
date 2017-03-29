@@ -24,8 +24,11 @@ public class GameStateHall : IStateBase {
 	public void Enter(GameStateBase owner)
 	{
 		CursorManager.SetCursor (CursorManager.CursorState.DEFAULT);
-		GameObject prefab = Resources.Load ("HallScene")as GameObject;
-		go = GameObject.Instantiate (prefab);
+		//GameObject prefab = Resources.Load ("HallScene")as GameObject;
+		ResourcesManager.Instance.Load("HallScene", (Object asset)=>{
+			go = GameObject.Instantiate ((GameObject)asset);
+		});
+
 	}
 
 	public void Execute(GameStateBase owner)

@@ -25,10 +25,13 @@ public class GameStateStudyRoom : IStateBase {
 	public void Enter(GameStateBase owner)
 	{
 		CursorManager.SetCursor (CursorManager.CursorState.DEFAULT);
-		GameObject prefab = Resources.Load ("StudyRoomScene")as GameObject;
-		GameObject go = GameObject.Instantiate (prefab);
-		uiCtr = go.GetComponent<StudyRoomUI> ();
-
+//		GameObject prefab = Resources.Load ("StudyRoomScene")as GameObject;
+//		GameObject go = GameObject.Instantiate (prefab);
+//		uiCtr = go.GetComponent<StudyRoomUI> ();
+		ResourcesManager.Instance.Load("StudyRoomScene", (Object asset)=>{
+			GameObject go = GameObject.Instantiate ((GameObject)asset);
+			uiCtr = go.GetComponent<StudyRoomUI> ();
+		});
 	}
 
 	public void Execute(GameStateBase owner)
