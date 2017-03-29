@@ -21,6 +21,6 @@ public class CoinAction : ActionBase {
 		CursorManager.SetCursor(CursorManager.CursorState.DEFAULT);
 		NotifyActionOverEvent();
 		GameData.HasCoin = true;
-		//GameStateManager.Instance().FSM.GlobalState.Message("GetCoin", null);
+		GameStateManager.Instance().FSM.GlobalState.Message("GetCoin", null);
 	}
 }

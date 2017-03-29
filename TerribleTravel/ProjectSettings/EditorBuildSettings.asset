@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/TerribleTravel/Scene/LogoScene.unity
+  - enabled: 1
     path: Assets/TerribleTravel/Scene/HomeScene.unity
   - enabled: 1
     path: Assets/TerribleTravel/Scene/GameScene.unity
-  - enabled: 1
-    path: Assets/TerribleTravel/Scene/LogoScene.unity
