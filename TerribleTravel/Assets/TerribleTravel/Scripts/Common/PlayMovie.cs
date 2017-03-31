@@ -3,13 +3,16 @@ using System.Collections;
 
 public class PlayMovie : MonoBehaviour {
 	public string LoadSceneName="HomeScene";
+	#if UNITY_STANDALONE_WIN
 	public MovieTexture movTexture;
+	#endif
 	private bool isPlayed = false;
 	private bool isQuit = false;
 	private float startTime = 0;
 	private AudioSource audioSource;
 	// Use this for initialization
 	void Start () {
+		#if UNITY_STANDALONE_WIN
 		if (null != movTexture) {
 			movTexture.loop = false;
 			if (null != movTexture.audioClip) {
@@ -18,6 +21,9 @@ public class PlayMovie : MonoBehaviour {
 			}
 		}
 		Debug.Log ("duration:"+movTexture.duration);
+		#else
+		UnityEngine.SceneManagement.SceneManager.LoadScene (LoadSceneName);
+		#endif
 	}
 	
 	// Update is called once per frame
@@ -27,6 +33,7 @@ public class PlayMovie : MonoBehaviour {
 
 	void OnGUI()
 	{
+		#if UNITY_STANDALONE_WIN
 		if (null == movTexture || isQuit)
 			return;
 		float height = movTexture.height / (float)movTexture.width * Screen.width;
@@ -46,7 +53,7 @@ public class PlayMovie : MonoBehaviour {
 		if (isPlayed && Time.time-startTime-movTexture.duration>=0) {
 			//StopPlayMovie ();
 		}
-
+		#endif
 	}
 	IEnumerator StopMovie(float second){
 		yield return new WaitForSeconds (second);
@@ -54,10 +61,12 @@ public class PlayMovie : MonoBehaviour {
 	}
 	void StopPlayMovie()
 	{
+		#if UNITY_STANDALONE_WIN
 		if (null != audioSource)
 			audioSource.Stop();
 		movTexture.Stop ();
 		isQuit = true;
 		UnityEngine.SceneManagement.SceneManager.LoadScene (LoadSceneName);
+		#endif
 	}
 }

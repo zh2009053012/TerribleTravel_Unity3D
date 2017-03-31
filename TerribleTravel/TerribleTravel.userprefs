@@ -1,8 +1,9 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\TerribleTravel\Scripts\GameState\GameStateClothing.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\TerribleTravel\Scripts\Common\PlayMovie.cs">
     <Files>
       <File FileName="Assets\TerribleTravel\Scripts\GameState\GameStateClothing.cs" Line="18" Column="5" />
+      <File FileName="Assets\TerribleTravel\Scripts\Common\PlayMovie.cs" Line="25" Column="70" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
