@@ -32,6 +32,7 @@ public class GarageUI : MonoBehaviour {
 	public void EnterBlackSeedHit(){
 		object[] p = new object[1];
 		p[0] = (object)"BlackSeed";
+		Debug.Log("EnterBlackSeedHit");
 		GameStateManager.Instance().FSM.GlobalState.Message("EnterTarget", p);
 	}
 	public void ExitBlackSeedHit(){

@@ -5,9 +5,11 @@ using System.Collections.Generic;
 public class EventData{
 	public int m_id;
 	public List<int> m_openRequiredList = new List<int>();
+	public string m_key;
 	public EventData(){}
-	public EventData(int id, int[] triggers){
+	public EventData(int id, int[] triggers, string key=""){
 		m_id = id;
+		m_key = key;
 		m_openRequiredList.AddRange(triggers);
 	}
 	public EventData Copy(){
@@ -111,7 +113,7 @@ public class EventConfig {
 		EventData e20 = new EventData(20, new int[]{});
 		AddData (e20);
 		//garage black seed
-		EventData e21 = new EventData(21, new int[]{});
+		EventData e21 = new EventData(21, new int[]{}, "WaterBottle");
 		AddData (e21);
 		//garage clean seed
 		EventData e22 = new EventData(22, new int[]{});

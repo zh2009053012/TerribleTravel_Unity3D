@@ -4,7 +4,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 public class ToolItemUI : MonoBehaviour {
-	public string key = "BlackSeed";
+	public string key = "WaterBottle";
 	private bool m_isEnter=false;
 	private bool m_isFollow = false;
 	private RectTransform m_rectTrans;

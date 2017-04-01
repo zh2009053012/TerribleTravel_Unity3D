@@ -6,6 +6,12 @@ using UnityEngine.EventSystems;
 public class EventController : MonoBehaviour {
 	[SerializeField]
 	protected int m_id=1;//event id
+	public int ID{
+		get{ return m_id;}
+		private set{ 
+			m_id = value;
+		}
+	}
 	[SerializeField]
 	protected bool m_repeat=true;
 	[SerializeField]
@@ -106,6 +112,7 @@ public class EventController : MonoBehaviour {
 			}
 			m_isTrigger = true;
 			CursorManager.SetCursor(m_cursor);
+			#if UNITY_STANDALONE_WIN || UNITY_EDITOR
 			if (!string.IsNullOrEmpty (m_hint)) {
 				m_msgCtr = MessageUI.AutoShowMessage (m_hint, false, ()=>{
 					if(null != m_msgCtr){
@@ -114,6 +121,7 @@ public class EventController : MonoBehaviour {
 					}
 				}, 1);
 			}
+			#endif
 		}
 	}
 	public void OnCursorExit(){

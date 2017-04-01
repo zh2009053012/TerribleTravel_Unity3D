@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
+using System.Collections.Generic;
 
 public class GameStateMainUI : IStateBase {
 
@@ -69,12 +72,21 @@ public class GameStateMainUI : IStateBase {
 		} else if(message.Equals("GetWaterBottle")){
 			uiCtr.ShowWaterBottle(true);
 		} else if(message.Equals("TryUseWaterBottle")){
-			if(curSelCtr.key.Equals(m_curEnter)){
+			Debug.Log ("key:"+curSelCtr.key+" curEnter:"+m_curEnter);
+//			if(curSelCtr.key.Equals(m_curEnter)){
+//				curSelCtr.Reset();
+//				GameData.HasWaterBottle = false;
+//				uiCtr.ShowWaterBottle(false);
+//				GameStateManager.Instance().FSM.CurrentState.Message("UseWaterBottle", null);
+//			}else{
+//				curSelCtr.Reset();
+//			}
+			if (CheckPointerOverGameObject (curSelCtr.key)) {
 				curSelCtr.Reset();
 				GameData.HasWaterBottle = false;
 				uiCtr.ShowWaterBottle(false);
 				GameStateManager.Instance().FSM.CurrentState.Message("UseWaterBottle", null);
-			}else{
+			} else {
 				curSelCtr.Reset();
 			}
 			//
@@ -89,5 +101,20 @@ public class GameStateMainUI : IStateBase {
 		}else if(message.Equals("ExitTarget")){
 			m_curEnter = "";
 		}
+	}
+	bool CheckPointerOverGameObject(string key){
+		PointerEventData eventData = new PointerEventData (EventSystem.current);
+		eventData.position = new Vector2 (Input.mousePosition.x, Input.mousePosition.y);
+		List<RaycastResult> results = new List<RaycastResult> ();
+		EventSystem.current.RaycastAll (eventData, results);
+		Debug.Log ("CheckPointerOverGameObject:"+results.Count);
+		foreach (RaycastResult item in results) {
+			EventController ctr = item.gameObject.GetComponent<EventController> ();
+			Debug.Log (item.gameObject.name);
+			if (null != ctr && !string.IsNullOrEmpty(EventConfig.GetEventData(ctr.ID).m_key)) {
+				return EventConfig.GetEventData (ctr.ID).m_key.Equals (curSelCtr.key);
+			}
+		}
+		return false;
 	}
 }
