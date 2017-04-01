@@ -116,7 +116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbc4e349c78dee84d842c8505ccccefe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movTexture: {fileID: 15200000, guid: 3eb8ec64d61085142a75920bab435729, type: 3}
+  LoadSceneName: HomeScene
 --- !u!81 &1561996429
 AudioListener:
   m_ObjectHideFlags: 0
